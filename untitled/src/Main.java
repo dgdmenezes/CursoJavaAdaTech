@@ -1,4 +1,8 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.TextStyle;
 import java.util.Arrays;
+import java.util.Locale;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -105,7 +109,34 @@ public class Main {
             default:
                 System.out.println("Nota inválida");
         }
+    // Manipulação de String e Datas
+    // Olá, {nome}. Hoje é {dia-da-semana}, BOM DIA.
 
+    nome = "Dante";
 
+        //ISO 8601
+        LocalDate hoje = LocalDate.now();
+        Locale brasil = new Locale("pt", "BR");
+        String diaSemana = hoje.getDayOfWeek().getDisplayName(TextStyle.FULL, brasil);
+        String saudacao;
+        LocalDateTime agora = LocalDateTime.now();
+        if(agora.getHour() >=0 && agora.getHour()<12){
+            saudacao = "bom dia";
+        }else if(agora.getHour()>=12 && agora.getHour()<18){
+            saudacao = "boa tarde";
+        }else {
+            saudacao = "boa noite";
+        }
+        // Olá, {nome}. Hoje é {dia-da-semana}, BOM DIA.
+        System.out.printf("Olá, %s. Hoje é %s, %s. %n", nome, diaSemana, saudacao.toUpperCase());
+
+    //Laços Numéricos
+    int multiplicador;
+    for (int i=1; i<=10;i++){
+        for (int j=1; j<=10; j++ ){
+            System.out.println(j+" x "+i + " = " + j*i);
+        }
+
+    }
     }
 }
