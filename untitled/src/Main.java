@@ -138,5 +138,33 @@ public class Main {
         }
 
     }
+
+    // Vetores(Arrays) e Matrizes
+    // em java não pode misturar o tipo do array, o tamanho é imutável
+
+    int[] numeros = new int[5];
+    String[] letras = {"A","B","D", "D"}; // nesta sintaxe não precisa declara o tamanho do array, mas ele permanece com tamanho fixo
+        for (int i=0; i<numeros.length; i++){
+            System.out.println(numeros[i]);
+        }
+
+        // funções
+
+        saudacao("Dante Gomes", 37);
+
+        int  resultado = soma(1,5);
+        System.out.println(resultado);
+
     }
+
+    public static void saudacao(String nome, int idade){
+        System.out.println("Hello, "+ nome + " idade: " + idade);
+    }
+
+    public static int soma(int numero1, int numero2){
+        int soma = numero1 + numero2;
+        return soma;
+
+    }
+
 }
